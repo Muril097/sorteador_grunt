@@ -1,14 +1,23 @@
-@fontePrincipal: Roboto, sans-serif;
-@fonteDoTitulo: Lobster, cursive;
+@fontePrincipal: "Bebas Neue", sans-serif;
+@fonteDoTitulo: "Roboto Condensed", sans-serif;
 @corDoTextoA: #fff;
 @corDoTextoB: #000000;
-@corDeFundo: #eb3b5a;
-@buttonColor: #f7b731;
+@corDeFundo: #3b64eb;
+@buttonColorA: #38f731;
+@buttonColorB: #22cf1c;
+@breakpointMobile: ~"(max-width: 767px)";
+@breakpointTablet: ~"(min-width: 768px) and (max-width: 1023px)";
 
 body {
-    background-color: @corDeFundo;
     font-family: @fontePrincipal;
     color: @corDoTextoA;
+    @media @breakpointTablet {
+        background-color: @corDeFundo;
+    }
+
+    @media @breakpointMobile {
+        background-color: @corDeFundo;
+    }
 }
 
 h1 {
@@ -22,6 +31,9 @@ main {
     margin: 0 auto;
     font-size: 2em;
     text-align: center;
+    background-color: @corDeFundo;
+    border: 8px solid @corDeFundo;
+    border-radius: 10px;
 }
 
 button {
@@ -31,33 +43,36 @@ button {
     font-size: 1.3em;
     margin-top: 16px;
     border-radius: 8px;
-    background-color: @buttonColor;
+    background-color: @buttonColorA;
     color:@corDoTextoB ;
+    max-width: 480px;
+    width: 100%;
     font-family: @fontePrincipal;
+        &:hover{
+            background-color: @buttonColorB;
+        }
 }
 
 input {
     display: block;
     margin: 16px auto 0;
     font-size: 2em;
-    max-width: 120px;
+    max-width: 480px;
     border: none;
     background-color: transparent;
     text-align: center;
     color:@corDoTextoA;
-    border-bottom: 6px solid #fff;
-
+    border-bottom: 2px solid #ffffffa2 ;
 }
 
 .resultado {
     padding: 16px;
     margin-top: 120px;
-    border: 8px dotted @corDoTextoA;
     display: none;
 
     span {
         font-weight: bold;
-        font-size: 3em;
+        font-size: 2em;
         display: block;
     }
 }
